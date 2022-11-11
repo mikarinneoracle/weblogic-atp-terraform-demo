@@ -2,7 +2,7 @@
 
 <i><b>prereq: oci cli must be working in oci cloud shell</b></i>
 
-### Demo - deploying WebLogic from OCI Marketplace with ATP using oci cli and Terraform in OCI cloud shell including maven build from source
+### Demo - deploying WebLogic from OCI Marketplace UCM image with ATP using oci cli and Terraform in OCI cloud shell including maven build from source
 <p>
 Open oci cloud shell
 
@@ -30,7 +30,7 @@ Run <code>sh script.sh</code>
 Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" ATP instance into it 
 using the VCN private subnet.
 <br>
-Then it will create a compute VM instance for WebLogic to the same VCN from Marketplace image using the VCN public subnet.
+Then it will create a compute VM instance for WebLogic to the same VCN from Marketplace UCM image using the VCN public subnet.
 <br>
 Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <code>VM instance-agent</code>.
     

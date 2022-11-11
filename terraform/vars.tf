@@ -29,12 +29,22 @@ variable "tags" {
   default = "TF"
 }
 
-variable "weblogic_wls_image_source_ocid" {
+variable "weblogic_image_source_ocid" {
   type    = string
   default = "ocid1.image.oc1..aaaaaaaapr7z57twuh4ornb25ehx7dm4w7vedc6wthewrokbdcyhtfs7bndq"
 }
 
-variable "weblogic_wls_shape" {
+variable "weblogic_shape" {
   type    = string
   default = "VM.Standard.E2.4"
+}
+
+variable "weblogic_shape_mem" {
+  type    = string
+  default = "32"
+}
+
+variable "weblogic_shape_ocpus" {
+  type    = string
+  default = "2"
 }

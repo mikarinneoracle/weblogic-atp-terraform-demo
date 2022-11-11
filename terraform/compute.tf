@@ -6,7 +6,9 @@ resource "oci_core_instance" "weblogic_wls" {
   availability_domain = var.availability_domain
   compartment_id      = var.compartment_id
   display_name        = "weblogic"
-  shape               = var.weblogic_wls_shape
+  shape               = var.weblogic_shape
+  memory_in_gbs       = var.weblogic_shape_mem
+  ocpus               = var.weblogic_shape_ocpus
   freeform_tags = {
     Managed = var.tags
   }
@@ -23,7 +25,7 @@ resource "oci_core_instance" "weblogic_wls" {
 
   source_details {
     source_type = "image"
-    source_id   = var.weblogic_wls_image_source_ocid
+    source_id   = var.weblogic_image_source_ocid
   }
 
   metadata = {
