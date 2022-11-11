@@ -2,7 +2,7 @@
 
 <i><b>prereq: oci cli must be working in oci cloud shell</b></i>
 
-### Demo - deploying WebLogic with ATP using oci cli and Terraform in cloud shell
+### Demo - deploying WebLogic with ATP using oci cli and Terraform in OCI cloud shell
 <p>
 Open oci cloud shell
 
