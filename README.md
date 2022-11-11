@@ -34,9 +34,9 @@ Access <i>http://<ip address of the VM>:7001/app</ip></i> from your browser.
 
 <p>
 After making sure WebLogic sample app works delete all created resources with Terraform by:
-<code>
-    cd terraform<br>
+<pre>
+    cd terraform
     terraform destroy
-</code>
+</pre>
 
 ### See on Youtube
