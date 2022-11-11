@@ -30,7 +30,7 @@ Run <code>sh script.sh</code>
 Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" ATP instance into it 
 using the VCN private subnet.
 <br>
-Then it will create a compute VM instnace for WebLogic to the same VCN from Marketplace image using the VCN public subnet and install a WebLogic sample app using the ATP connection with the wallet on the VM using <code>VM instance-agent</code>.
+Then it will create a compute VM instance for WebLogic to the same VCN from Marketplace image using the VCN public subnet and install a WebLogic sample app using the ATP connection with the wallet on the VM using <code>VM instance-agent</code>.
     
 <i>Note:</i>To make the <code>VM instance-agent</code> run succesfully add the following <code>policy</code> to
 the <code>dynamic group</code> you are running within:
