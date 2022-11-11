@@ -22,9 +22,10 @@ if [ -z "$OCID" ]; then
         sleep 10
     done
 fi
-echo "Terraform done."
+echo "Terraform done. Doing maven build .."
 cd app
 mvn package -q
+echo "Build done. Pushing artifacts .."
 cd ..
 export preauth=$(oci os preauth-request create -bn wls-artifacts --access-type AnyObjectRead --name artifacts-bucket-preauth --time-expires 2024-01-01 | jq '.data."access-uri"' | tr -d '"')
 sed -i "s|REGION|$region|g" wls.sh
@@ -35,6 +36,7 @@ sed -i "s|INSTANCE_OCID|$OCID|g" cmd.json
 sed -i "s|SOURCE_URI|$preauth|g" cmd.json
 oci os object put --force -bn wls-artifacts --file app/target/app.war
 oci os object put --force -bn wls-artifacts --file wls.sh
+echo "Pushing artifacts done."
 echo "Waiting 3 mins WLS to start up .. get a coffee ;)"
 spin='-\|/'
 export tries=0
@@ -56,6 +58,10 @@ do
   i=$(( (i+1) %4 ))
   printf "\r${spin:$i:1}"
   tries=$(( $tries + 1 ))
+  if [ $status != 'FAILED' ]; then
+    echo "Instance-agent command failed  .. exiting build."
+    exit 1
+  fi
 done
 export par=$(oci os preauth-request list -bn wls-artifacts | jq '.data[].id' | tr -d '"')
 oci os preauth-request delete -bn wls-artifacts --par-id $par --force
