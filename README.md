@@ -27,7 +27,11 @@ export ad="Vihs:eu-amsterdam-1-AD-1"
 Run <code>sh script.sh</code>
 
 <p>
-Script will create a "weblogic-VCN" VCN and then attach "weblogic-ATP" ATP instance into it. Then it will a VM for WebLogic from Marketplace image and install a WebLogic sample app including the ATP connection. 
+Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" ATP instance into it 
+using the private subnet.
+<br>
+Then it will create a compute VM for WebLogic to the same VCN from Marketplace image using the public subnet
+and install a WebLogic sample app using the ATP connection with the wallet on the VM.
     
 <p>
 Access <i>http://<ip address of the VM>:7001/app</ip></i> from your browser.
