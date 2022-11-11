@@ -7,10 +7,13 @@ resource "oci_core_instance" "weblogic_wls" {
   compartment_id      = var.compartment_id
   display_name        = "weblogic"
   shape               = var.weblogic_shape
-  memory_in_gbs       = var.weblogic_shape_mem
-  ocpus               = var.weblogic_shape_ocpus
   freeform_tags = {
     Managed = var.tags
+  }
+  
+  shape_config {
+    memory_in_gbs     = var.weblogic_shape_mem
+    ocpus             = var.weblogic_shape_ocpus
   }
 
   create_vnic_details {
