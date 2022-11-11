@@ -48,7 +48,7 @@ while [ $tries -le 600 ] && [[ $res == '' ]]
 do
   i=$(( (i+1) %4 ))
   printf "\r${spin:$i:1}"
-  export res=$(curl http://$ip:7001 | grep TITLE)
+  export res=$(curl -s http://$ip:7001 | grep TITLE)
   sleep 1
   tries=$(( $tries + 1 ))
 done
