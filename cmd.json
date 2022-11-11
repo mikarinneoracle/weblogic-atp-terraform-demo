@@ -1,0 +1,19 @@
+{
+  "compartmentId": "COMPARTMENT_ID",
+  "content": {
+    "output":
+      {
+        "outputType": "TEXT"
+      },
+    "source":
+      {
+        "sourceType": "OBJECT_STORAGE_URI",
+        "sourceUri":  "https://objectstorage.REGION.oraclecloud.comSOURCE_URIwls.sh"
+    }
+  },
+  "displayName": "weblogic-app-deploy",
+  "target": {
+    "instanceId": "INSTANCE_OCID"
+  },
+  "timeoutInSeconds": "600"
+}

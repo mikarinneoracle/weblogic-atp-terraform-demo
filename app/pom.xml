@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2020, 2021, Oracle and/or its affiliates. -->
+<!-- Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>webapp</groupId>
+    <artifactId>app</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>app</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
+    </properties>
+
+    <scm>
+        <connection>scm:git:git.poliisi.eficode.io:hello-world/hello-world.git</connection>
+        <developerConnection>scm:git:git.poliisi.eficode.io:hello-world/hello-world.git</developerConnection>
+        <url>https://git.poliisi.eficode.io/hello-world/hello-world</url>
+    </scm>
+
+    <ciManagement>
+        <system>Gitlab</system>
+        <url>https://git.poliisi.eficode.io/hello-world/hello-world/-/pipelines</url>
+    </ciManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>hello-world-maven</id>
+            <name>Hello World Maven release repository</name>
+            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven-releases-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>hello-world-maven</id>
+            <name>Hello World Maven snapshot repository</name>
+            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven-snapshots-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>hello-world-maven</id>
+            <name>All Hello World Maven repositories</name>
+            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>hello-world-maven</id>
+            <name>All Hello World Maven repositories</name>
+            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>app</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
