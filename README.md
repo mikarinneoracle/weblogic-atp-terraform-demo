@@ -39,7 +39,7 @@ Allow dynamic-group MyDynamicGroup to use instance-agent-command-execution-famil
 </pre>
     
 <p>
-Access <code>http://&lt;ip address of the VM&gt;:7001/app</ip></code> from your browser.
+Access <b><code>http://&lt;ip address of the VM&gt;:7001/app</ip></code></b> from your browser.
 
 <p>
 After making sure WebLogic sample app works delete all created resources with Terraform by:
