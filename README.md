@@ -28,13 +28,14 @@ Run <code>sh script.sh</code>
 
 <p>
 Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" ATP instance into it 
-using the private subnet.
+using the VCN private subnet.
 <br>
-Then it will create a compute VM for WebLogic to the same VCN from Marketplace image using the public subnet
-and install a WebLogic sample app using the ATP connection with the wallet on the VM.
+Then it will create a compute VM instnace for WebLogic to the same VCN from Marketplace image using the VCN public subnet and install a WebLogic sample app using the ATP connection with the wallet on the VM using <code>VM instance-agent</code>.
+    
+<i>Note:</i>
     
 <p>
-Access <i>http://<ip address of the VM>:7001/app</ip></i> from your browser.
+Access <code>http://&lt;ip address of the VM&gt;:7001/app</ip></code> from your browser.
 
 <p>
 After making sure WebLogic sample app works delete all created resources with Terraform by:
