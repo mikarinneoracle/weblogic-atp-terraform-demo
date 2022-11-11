@@ -40,7 +40,7 @@ oci os object put --force -bn wls-artifacts --file wls.sh
 echo "Pushing artifacts done."
 echo "Waiting WLS to start up .. get a coffee ;)"
 export ip=$(oci compute instance list-vnics --instance-id $OCID | jq -r '.data[]."public-ip"')
-expoort spin='-\|/'
+export spin='-\|/'
 export tries=0
 export res=''
 export i=0
