@@ -64,8 +64,8 @@ do
   printf "\r${spin:$i:1}"
   tries=$(( $tries + 1 ))
   if [ $status == 'FAILED' ]; then
-    echo "Instance-agent command failed  .. exiting build."
-    exit 1
+    echo "Instance-agent deployment failed  .. "
+    tries=1001
   fi
 done
 export par=$(oci os preauth-request list -bn wls-artifacts | jq '.data[].id' | tr -d '"')
