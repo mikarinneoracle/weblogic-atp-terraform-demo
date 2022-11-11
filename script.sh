@@ -1,6 +1,3 @@
-# cp cmd.json cmd.json.copy
-# cp wls.sh wls.sh.copy
-# cp terraform/vars.tf terraform/vars.tf.copy
 export compartmentId="<YOUR COMPARTMENT ID>"
 export region="eu-amsterdam-1"
 export ad="Vihs:eu-amsterdam-1-AD-1"
@@ -64,8 +61,5 @@ export par=$(oci os preauth-request list -bn wls-artifacts | jq '.data[].id' | t
 oci os preauth-request delete -bn wls-artifacts --par-id $par --force
 oci os object bulk-delete -bn wls-artifacts --force
 oci os object bulk-delete -bn wls-create-domain --force
-cp cmd.json.copy cmd.json
-cp wls.sh.copy wls.sh
 rm -f out.txt
 rm -f tf.out
-# cp terraform/vars.tf.copy terraform/vars.tf
