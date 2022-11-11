@@ -1,7 +1,7 @@
 # cp cmd.json cmd.json.copy
 # cp wls.sh wls.sh.copy
 # cp terraform/vars.tf terraform/vars.tf.copy
-export compartmentId="ocid1.compartment.oc1..aaaaaaaamn7edtntfc7itudleec7qj23hhnx6pzufscvozzhnxqurj4gboba"
+export compartmentId="<YOUR COMPARTMENT ID>"
 export region="eu-amsterdam-1"
 export ad="Vihs:eu-amsterdam-1-AD-1"
 sed -i "s|COMPARTMENT_ID|${compartmentId}|g" terraform/vars.tf
