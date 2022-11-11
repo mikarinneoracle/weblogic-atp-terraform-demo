@@ -4,5 +4,7 @@
     String res = Atp.runsql();
 %>
 
-HELLO HELLO FROM OCI <3 TERRAFORM ==> ATP query result: <%= res %>
+<h2>Welcome to WebLogic with Terraform on OCI</h2>
+
+ATP query result for date and time: <b><%= res %></b>
 

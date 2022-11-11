@@ -27,7 +27,6 @@ resource "oci_core_instance" "weblogic_wls" {
   }
 
   metadata = {
-    ssh_authorized_keys = var.weblogic_wls_ssh_public_key
     user_data           = base64encode(data.template_file.wls.rendered)
     py_par              = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.py_script_preauth.access_uri}"
     wallet_par          = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.weblogic_atp_wallet_preauth.access_uri}"
