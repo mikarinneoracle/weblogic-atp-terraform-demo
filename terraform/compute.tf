@@ -12,6 +12,7 @@ resource "oci_core_instance" "weblogic_wls" {
   }
   
   shape_config {
+    baseline_ocpu_utilization = "BASELINE_1_1"
     memory_in_gbs     = var.weblogic_shape_mem
     ocpus             = var.weblogic_shape_ocpus
   }

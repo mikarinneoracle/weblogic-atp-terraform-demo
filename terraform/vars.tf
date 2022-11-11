@@ -36,12 +36,12 @@ variable "weblogic_image_source_ocid" {
 
 variable "weblogic_shape" {
   type    = string
-  default = "VM.Standard.E2.4"
+  default = "VM.Standard.E4.Flex"
 }
 
 variable "weblogic_shape_mem" {
   type    = string
-  default = "32"
+  default = "64"
 }
 
 variable "weblogic_shape_ocpus" {
