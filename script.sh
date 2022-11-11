@@ -43,7 +43,7 @@ export ip=$(oci compute instance list-vnics --instance-id $OCID | jq -r '.data[]
 spin='-\|/'
 export tries=0
 export res=''
-i=0
+export i=0
 while [ $tries -le 600 ] && [[ $res == '' ]]
 do
   i=$(( (i+1) %4 ))
@@ -56,6 +56,7 @@ echo "WebLogic running ... starting app deployment using VM instance-agent ..."
 export cmd=$(oci instance-agent command create --from-json file://cmd.json | jq '.data.id' | tr -d '"')
 export tries=0
 export status=''
+export i=0
 while [ $tries -le 1000 ] && [[ $status != 'SUCCEEDED' ]] 
 do
   export status=$(oci instance-agent command-execution get --instance-id $OCID --command-id $cmd | jq '.data."lifecycle-state"' | tr -d '"')
