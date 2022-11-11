@@ -6,8 +6,6 @@ import javax.naming.*;
 import java.util.Hashtable;
 public class Atp
 {
-    public static String test()
-
     public static String runsql()
     {
         String sql = "select sysdate from dual";
