@@ -58,7 +58,7 @@ do
   i=$(( (i+1) %4 ))
   printf "\r${spin:$i:1}"
   tries=$(( $tries + 1 ))
-  if [ $status != 'FAILED' ]; then
+  if [ $status == 'FAILED' ]; then
     echo "Instance-agent command failed  .. exiting build."
     exit 1
   fi
