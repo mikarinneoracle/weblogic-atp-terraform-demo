@@ -44,9 +44,10 @@ Allow dynamic-group MyDynamicGroup to use instance-agent-command-execution-famil
 Access <b><code>http://&lt;ip address of the VM&gt;:7001/app</code></b> from your browser.
 
 <p>
-WLS console can be accessed using url:<br>
-<b><code>http://&lt;ip address of the VM&gt;:7001/console</code></b> from your browser
-with user <code>weblogic</code> and password <code>Welcome1</code>.
+WLS console can be accessed using url:
+
+<p>
+<b><code>http://&lt;ip address of the VM&gt;:7001/console</code></b> with user <code>weblogic</code> and password <code>Welcome1</code>.
 
 <p>
 After making sure WebLogic sample app works delete all created resources with Terraform by:
