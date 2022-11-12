@@ -29,9 +29,9 @@ Run <code>sh script.sh</code>
 <p>
 Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" ATP instance into it 
 using the VCN private subnet.
-<br>
+<p>
 Then it will create a compute VM instance for WebLogic to the same VCN from Marketplace UCM image using the VCN public subnet.
-<br>
+<p>
 Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <code>VM instance-agent</code>.
     
 <i>Note:</i> To make the <code>VM instance-agent</code> run succesfully add the following <code>policy</code> to
