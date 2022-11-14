@@ -8,7 +8,7 @@ resource "oci_objectstorage_object" "weblogic_atp_wallet" {
   bucket    = oci_objectstorage_bucket.wls.name
   content   = oci_database_autonomous_database_wallet.weblogic_atp_wallet.content
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
-  object    = "weblogic_atp_wallet"
+  object    = "wallet.zip"
 }
 
 resource "oci_objectstorage_preauthrequest" "weblogic_atp_wallet_preauth" {
