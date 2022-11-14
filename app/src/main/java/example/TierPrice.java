@@ -2,10 +2,10 @@ package example;
 
 public class TierPrice
 {
-    float price_mo;
-    int users;
-    int storage;
-    String support;
+    public float price_mo;
+    public int users;
+    public int storage;
+    public String support;
 
     public TierPrice()
     {
