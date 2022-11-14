@@ -5,13 +5,11 @@ import java.sql.*;
 import javax.naming.*;
 public class Atp
 {
-    static String error = "";
-    public static void setError(String error) { this.error = error; };
-    public static String getErrror() { return error; };
+    public static String error = "";
 
     public static TierPrice getTierPrice(String tier)
     {
-        tierPrice = new TierPrice();
+        TierPrice tierPrice = new TierPrice();
         try {
             if(AtpUtil.getDataSource() != null)
             {
@@ -27,10 +25,10 @@ public class Atp
                 }
                 connection.close();
             } else {
-                this.setError("No datasource available");
+                error = "No datasource available";
             }
         } catch (Exception e) {
-            this.setError(e.getMessage());
+            error = e.getMessage();
         }
         return tierPrice;
     }

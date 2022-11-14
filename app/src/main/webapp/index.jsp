@@ -1,6 +1,6 @@
 <%@ page import="example.*" %>
 
-<%= Atp.getError() %>
+<%= Atp.error %>
     
 <h2>Free tier price</h2>
 

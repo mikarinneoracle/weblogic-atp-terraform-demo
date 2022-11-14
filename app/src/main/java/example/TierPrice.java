@@ -9,13 +9,13 @@ public class TierPrice
 
     public TierPrice()
     {
-        this.price_mo = "";
-        this.users = "";
-        this.storage = "";
+        this.price_mo = 0;
+        this.users = 0;
+        this.storage = 0;
         this.support = "";
     }
 
-    public void setTierPrice(String price_mo, String users, String storage, String support )
+    public void setTierPrice(float price_mo, int users, int storage, String support )
     {
         this.price_mo = price_mo;
         this.users = users;
