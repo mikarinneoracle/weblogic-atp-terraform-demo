@@ -1,7 +1,7 @@
 set cloudconfig ./network/admin/wallet.zip
 conn admin/WelcomeFolks123#!@weblogic_tp
 /
-lb update -changelog-file controller.xml
-lb update -changelog-file data.xml
+lb update -changelog controller.xml
+lb update -changelog data.xml
 /
 exit
