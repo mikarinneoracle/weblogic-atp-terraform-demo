@@ -19,7 +19,7 @@ if [ -z "$OCID" ]; then
         cat out.txt
         export OCID=$(grep -oP '(?<=ocid = ")[^"]*' out.txt)
         tries=$(( $tries + 1 ))
-        sleep 30
+        sleep 10
     done
 fi
 clear

@@ -11,4 +11,3 @@ resource "oci_database_autonomous_database_wallet" "weblogic_atp_wallet" {
     command = "sh db/script.sh ${oci_database_autonomous_database_wallet.weblogic_atp_wallet.content}"
   }
 }
-
