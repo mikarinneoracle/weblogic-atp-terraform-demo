@@ -33,6 +33,7 @@ resource "oci_core_instance" "weblogic_vm" {
   }
 
   metadata = {
+    ssh_authorized_keys = "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA2laLGYCdv26vEQV3U3HqOIBsaW+ZSzsR49RvVfliaTDD+T8QSjgs4f0FxVINFxKHDYNONCl8iOwn7e0kDlrYooezsheKY8eOlaq7okfnVWBliRlFM/ncwKTOZoUVdvyEq/J4/WrQH26oEk24yYHlB2bFArxd+MoTIuoU04W3EIVK9jR4F6mORnUcQX3yFx2QuVBT7aweCDq/DNR3HiAGrMieOMZFvQSoYU8BaHghJnzstpJhmvneDmutp6YKQp7slS6q7Hpchf6LXkhWwSFuv8jpIpW7iqgDxBkqtYL06jzndjrdKvoYQFrb7IKLCxisGlEx0HjRswm3EAk+7CYBXw== rsa-key-20160908"
     user_data           = base64encode(data.template_file.wls.rendered)
     py_par              = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.py_script_preauth.access_uri}"
     wallet_par          = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.weblogic_atp_wallet_preauth.access_uri}"
