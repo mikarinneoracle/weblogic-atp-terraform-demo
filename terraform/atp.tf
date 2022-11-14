@@ -11,7 +11,7 @@ resource "oci_database_autonomous_database" "weblogic_atp" {
   is_dedicated             = false
   cpu_core_count           = 1
   data_storage_size_in_tbs = 1
-  license_type             = "LICENSE_INCLUDED"
+  license_model            = "LICENSE_INCLUDED"
   is_preview_version_with_service_terms_accepted = false
   freeform_tags = {
     Managed = var.tags
