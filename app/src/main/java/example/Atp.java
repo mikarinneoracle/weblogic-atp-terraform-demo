@@ -5,9 +5,9 @@ import java.sql.*;
 import javax.naming.*;
 public class Atp
 {
-    String error = "";
-    public static setError(Strign error) { this.error = error };
-    public static getErrror() { return error };
+    static String error = "";
+    public static void setError(String error) { this.error = error; };
+    public static String getErrror() { return error; };
 
     public static TierPrice getTierPrice(String tier)
     {
@@ -17,12 +17,12 @@ public class Atp
             {
                 Connection connection = AtpUtil.getDataSource().getConnection();
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery("select PRICE_MO, USERS, STORAGE, SUPPORT from PRICE where TIER = '" tier + "'");
+                ResultSet resultSet = statement.executeQuery("select PRICE_MO, USERS, STORAGE, SUPPORT from PRICE where TIER = '" + tier + "'");
                 while (resultSet.next()) {
                     tierPrice.setTierPrice(resultSet.getFloat("PRICE_MO"), 
                                            resultSet.getInt("USERS"),
                                            resultSet.getInt("STORAGE"),
-                                           resultSet.getString("SUPPORT"),
+                                           resultSet.getString("SUPPORT")
                                           );
                 }
                 connection.close();
