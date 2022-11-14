@@ -7,5 +7,8 @@ resource "oci_database_autonomous_database_wallet" "weblogic_atp_wallet" {
   password               = "WelcomeFolks123#!"
   base64_encode_content  = true
   generate_type          = "SINGLE"
+  provisioner "local-exec" {
+    command = "sh db/script.sh ${oci_database_autonomous_database_wallet.autonomous_database_wallet.content}"
+  }
 }
 

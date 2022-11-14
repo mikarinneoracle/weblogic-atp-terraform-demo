@@ -3,29 +3,35 @@ package example;
 import javax.sql.*;
 import java.sql.*;
 import javax.naming.*;
-import java.util.Hashtable;
 public class Atp
 {
-    public static String runsql()
+    String error = "";
+    public static setError(Strign error) { this.error = error };
+    public static getErrror() { return error };
+
+    public static TierPrice getTierPrice(String tier)
     {
-        String sql = "select sysdate from dual";
-        String res = "";
+        tierPrice = new TierPrice();
         try {
             if(AtpUtil.getDataSource() != null)
             {
                 Connection connection = AtpUtil.getDataSource().getConnection();
                 Statement statement = connection.createStatement();
-                ResultSet resultSet = statement.executeQuery(sql);
+                ResultSet resultSet = statement.executeQuery("select PRICE_MO, USERS, STORAGE, SUPPORT from PRICE where TIER = '" tier + "'");
                 while (resultSet.next()) {
-                    res = resultSet.getString("sysdate");
+                    tierPrice.setTierPrice(resultSet.getFloat("PRICE_MO"), 
+                                           resultSet.getInt("USERS"),
+                                           resultSet.getInt("STORAGE"),
+                                           resultSet.getString("SUPPORT"),
+                                          );
                 }
                 connection.close();
             } else {
-                res = "Datasource not available";
+                this.setError("No datasource available");
             }
         } catch (Exception e) {
-            res = e.getMessage();
+            this.setError(e.getMessage());
         }
-        return res;
+        return tierPrice;
     }
 }
