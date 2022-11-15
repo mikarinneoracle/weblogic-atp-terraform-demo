@@ -21,7 +21,7 @@ resource "oci_core_internet_gateway" "weblogic_IG" {
   vcn_id = oci_core_vcn.weblogic_vcn.id
 }
 
-resource "oci_core_route_table" "weblogic_private_rt" {
+resource "oci_core_route_table" "weblogic_public_rt" {
   compartment_id = var.compartment_id
   vcn_id         = oci_core_vcn.weblogic_vcn.id
   display_name   = "Route Table for Private Subnet-wls"
