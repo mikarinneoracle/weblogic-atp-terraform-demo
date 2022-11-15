@@ -87,11 +87,11 @@
             <h4 class="my-0 fw-normal">Pro</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title"><%= $pricePro.price_mo %><small class="text-muted fw-light">/mo</small></h1>
+            <h1 class="card-title pricing-card-title"><%= pricePro.price_mo %><small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li><%= $pricePro.users %> users included</li>
-              <li><%= $pricePro.storage %> GB of storage</li>
-              <li><%= $pricePro.support %></li>
+              <li><%= pricePro.users %> users included</li>
+              <li><%= pricePro.storage %> GB of storage</li>
+              <li><%= pricePro.support %></li>
               <li>Help center access</li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
