@@ -21,29 +21,6 @@ resource "oci_core_internet_gateway" "weblogic_IG" {
   vcn_id = oci_core_vcn.weblogic_vcn.id
 }
 
-resource "oci_core_route_table" "weblogic_public_rt" {
-  compartment_id = var.compartment_id
-  vcn_id         = oci_core_vcn.weblogic_vcn.id
-  display_name   = "Route Table for Private Subnet-wls"
-  freeform_tags = {
-    Managed = var.tags
-  }
-
-  route_rules {
-    network_entity_id = oci_core_nat_gateway.weblogic_nat_gw.id
-    description       = "Internet via NAT Gateway"
-    destination       = "0.0.0.0/0"
-    destination_type  = "CIDR_BLOCK"
-  }
-
-  route_rules {
-    network_entity_id = oci_core_service_gateway.weblogic_service_gateway.id
-    description       = "OCI Services via Service Gateway"
-    destination       = "all-ams-services-in-oracle-services-network"
-    destination_type  = "SERVICE_CIDR_BLOCK"
-  }
-}
-
 resource "oci_core_default_route_table" "weblogic_public_rt" {
   compartment_id = var.compartment_id
   display_name = "Default Route Table for wls"
@@ -57,6 +34,20 @@ resource "oci_core_default_route_table" "weblogic_public_rt" {
     destination       = "0.0.0.0/0"
     destination_type  = "CIDR_BLOCK"
     network_entity_id = oci_core_internet_gateway.weblogic_IG.id
+  }
+  
+  route_rules {
+    network_entity_id = oci_core_nat_gateway.weblogic_nat_gw.id
+    description       = "Internet via NAT Gateway"
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+  }
+
+  route_rules {
+    network_entity_id = oci_core_service_gateway.weblogic_service_gateway.id
+    description       = "OCI Services via Service Gateway"
+    destination       = "all-ams-services-in-oracle-services-network"
+    destination_type  = "SERVICE_CIDR_BLOCK"
   }
 }
 
