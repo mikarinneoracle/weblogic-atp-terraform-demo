@@ -35,13 +35,6 @@ resource "oci_core_default_route_table" "weblogic_public_rt" {
     destination_type  = "CIDR_BLOCK"
     network_entity_id = oci_core_internet_gateway.weblogic_IG.id
   }
-  
-  route_rules {
-    network_entity_id = oci_core_nat_gateway.weblogic_nat_gw.id
-    description       = "Internet via NAT Gateway"
-    destination       = "0.0.0.0/0"
-    destination_type  = "CIDR_BLOCK"
-  }
 
   route_rules {
     network_entity_id = oci_core_service_gateway.weblogic_service_gateway.id
