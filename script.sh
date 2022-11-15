@@ -22,7 +22,6 @@ if [ -z "$OCID" ]; then
         sleep 10
     done
 fi
-clear
 echo "Terraform done. Doing maven build .."
 cd app
 mvn package -q
