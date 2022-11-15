@@ -102,42 +102,6 @@ resource "oci_core_security_list" "weblogic_security_list_public" {
     source_type = "CIDR_BLOCK"
   }
 
-  freeform_tags = {
-    Managed = var.tags
-  }
-}
-
-resource "oci_core_security_list" "weblogic_security_list_private" {
-  compartment_id = var.compartment_id
-  vcn_id         = oci_core_vcn.weblogic_vcn.id
-  display_name   = "Security list for WebLogic private subnet"
-
-  egress_security_rules {
-    destination      = "0.0.0.0/0"
-    protocol         = "all"
-    destination_type = "CIDR_BLOCK"
-  }
-
-  ingress_security_rules {
-    protocol = "1"
-    source   = "0.0.0.0/0"
-    icmp_options {
-      type = "3"
-      code = "4"
-    }
-    source_type = "CIDR_BLOCK"
-  }
-
-  ingress_security_rules {
-    protocol = "6"
-    source   = "0.0.0.0/0"
-    tcp_options {
-      max = "22"
-      min = "22"
-    }
-    source_type = "CIDR_BLOCK"
-  }
-
   ingress_security_rules {
     protocol = "6"
     source   = "0.0.0.0/0"
@@ -148,16 +112,6 @@ resource "oci_core_security_list" "weblogic_security_list_private" {
     source_type = "CIDR_BLOCK"
   }
 
-  freeform_tags = {
-    Managed = var.tags
-  }
-}
-
-resource "oci_core_nat_gateway" "weblogic_nat_gw" {
-  compartment_id = var.compartment_id
-  vcn_id         = oci_core_vcn.weblogic_vcn.id
-  block_traffic  = false
-  display_name   = "weblogic NGW"
   freeform_tags = {
     Managed = var.tags
   }
@@ -179,24 +133,6 @@ resource "oci_core_subnet" "Public_Subnet_weblogic" {
   prohibit_internet_ingress  = "false"
   prohibit_public_ip_on_vnic = "false"
   route_table_id             = oci_core_default_route_table.weblogic_public_rt.id
-}
-
-resource "oci_core_subnet" "Private_Subnet_weblogic" {
-  vcn_id              = oci_core_vcn.weblogic_vcn.id
-  #dns_label           = "weblogic"
-  availability_domain = var.availability_domain
-  cidr_block          = "10.0.1.0/24"
-  compartment_id      = var.compartment_id
-  display_name        = "Private Subnet-wls"
-  freeform_tags       = {
-    Managed = var.tags
-  }
-  security_list_ids = [
-     oci_core_security_list.weblogic_security_list_private.id
-  ]
-  prohibit_internet_ingress  = "true"
-  prohibit_public_ip_on_vnic = "true"
-  route_table_id             = oci_core_route_table.weblogic_private_rt.id
 }
 
 resource "oci_core_service_gateway" "weblogic_service_gateway" {
