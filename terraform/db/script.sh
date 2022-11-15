@@ -12,5 +12,5 @@ wget https://objectstorage.eu-amsterdam-1.oraclecloud.com/p/rBz7NIZQsEXsXN6yqnLn
 unzip -q V1022102-01.zip
 ./sqlcl/bin/sql -v
 echo "-------------------------------------------------------------------------------------------------------------------"
-cat /run.sql
+cat ./run.sql
 ./sqlcl/bin/sql /nolog @./run.sql
