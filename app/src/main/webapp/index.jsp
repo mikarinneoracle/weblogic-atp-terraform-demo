@@ -3,6 +3,9 @@
 <% TierPrice priceFree = Atp.getTierPrice("FREE"); %>
 <% TierPrice pricePro = Atp.getTierPrice("PRO"); %>
 <% TierPrice priceEnterprise = Atp.getTierPrice("ENTERPRISE"); %>
+<% TierOptions optionsFree = Atp.getTierOptions("FREE"); %>
+<% TierOptions optionsPro = Atp.getTierOptions("PRO"); %>
+<% TierOptions optionsEnterprise = Atp.getTierOptions("ENTERPRISE"); %>
 
 <!doctype html>
 <html lang="en">
@@ -87,7 +90,7 @@
             <h4 class="my-0 fw-normal">Pro</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title"><%= pricePro.price_mo %><small class="text-muted fw-light">/mo</small></h1>
+            <h1 class="card-title pricing-card-title">$<%= pricePro.price_mo %><small class="text-muted fw-light">/mo</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
               <li><%= pricePro.users %> users included</li>
               <li><%= pricePro.storage %> GB of storage</li>
@@ -132,42 +135,42 @@
         <tbody>
           <tr>
             <th scope="row" class="text-start">Public</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Private</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isPrivate == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isPrivate == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isPrivate == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
         </tbody>
 
         <tbody>
           <tr>
             <th scope="row" class="text-start">Permissions</th>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isPermissions == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isPermissions == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isPermissions == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Sharing</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isSharing == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isSharing == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isSharing == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Unlimited members</th>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isUnlimited == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isUnlimited == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isUnlimited == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
           <tr>
             <th scope="row" class="text-start">Extra security</th>
-            <td></td>
-            <td></td>
-            <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+            <td><% if (optionsFree.isExtrasec == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsPro.isExtrasec == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsEnterprise.isExtrasec == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
         </tbody>
       </table>

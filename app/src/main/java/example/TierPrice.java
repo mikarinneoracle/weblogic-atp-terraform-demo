@@ -15,7 +15,7 @@ public class TierPrice
         this.support = "";
     }
 
-    public void setTierPrice(float price_mo, int users, int storage, String support )
+    public void setTierPrice(float price_mo, int users, int storage, String support)
     {
         this.price_mo = price_mo;
         this.users = users;

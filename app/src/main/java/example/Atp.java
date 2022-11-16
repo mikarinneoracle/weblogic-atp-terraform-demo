@@ -32,4 +32,32 @@ public class Atp
         }
         return tierPrice;
     }
+    
+    public static TierOptions getTierOptions(String tier)
+    {
+        TierOptions tierOptions = new TierOptions();
+        try {
+            if(AtpUtil.getDataSource() != null)
+            {
+                Connection connection = AtpUtil.getDataSource().getConnection();
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery("select ISPUBLIC, ISPRIVATE, ISPERMISSIONS, ISSHARING, ISUNLIMITED, ISEXTRASEC from OPTIONS where TIER = '" + tier + "'");
+                while (resultSet.next()) {
+                    tierOptions.setTierOptions(resultSet.getString("ISPUBLIC"), 
+                                               resultSet.getString("ISPRIVATE"),
+                                               resultSet.getString("ISPERMISSIONS"),
+                                               resultSet.getString("ISSHARING"),
+                                               resultSet.getString("ISUNLIMITED"),
+                                               resultSet.getString("ISEXTRASEC")
+                                          );
+                }
+                connection.close();
+            } else {
+                error = "No datasource available";
+            }
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+        return tierOptions;
+    }
 }
