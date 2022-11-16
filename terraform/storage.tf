@@ -8,7 +8,7 @@ resource "oci_objectstorage_object" "weblogic_atp_wallet" {
   bucket    = oci_objectstorage_bucket.wls.name
   content   = oci_database_autonomous_database_wallet.weblogic_atp_wallet.content
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
-  object    = "weblogic_atp_wallet"
+  object    = "wallet.zip"
 }
 
 resource "oci_objectstorage_preauthrequest" "weblogic_atp_wallet_preauth" {
@@ -24,7 +24,7 @@ resource "oci_objectstorage_object" "py_script" {
   bucket    = oci_objectstorage_bucket.wls.name
   content   = file("./scripts/create_domain.py")
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
-  object    = "py_script"
+  object    = "create_domain.py"
 }
 
 resource "oci_objectstorage_preauthrequest" "py_script_preauth" {
@@ -40,7 +40,7 @@ resource "oci_objectstorage_object" "py_script2" {
   bucket    = oci_objectstorage_bucket.wls.name
   content   = file("./scripts/create_datasource_atp.py")
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
-  object    = "py_script2"
+  object    = "create_datasource_atp.py"
 }
 
 resource "oci_objectstorage_preauthrequest" "py_script2_preauth" {
@@ -56,7 +56,7 @@ resource "oci_objectstorage_object" "atp_properties" {
   bucket    = oci_objectstorage_bucket.wls.name
   content   = file("./scripts/atp.properties")
   namespace = data.oci_objectstorage_namespace.user_namespace.namespace
-  object    = "atp_properties"
+  object    = "atp.properties"
 }
 
 resource "oci_objectstorage_preauthrequest" "atp_properties_preauth" {

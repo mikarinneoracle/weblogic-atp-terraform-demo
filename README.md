@@ -27,8 +27,7 @@ export ad="Vihs:eu-amsterdam-1-AD-1"
 Run <code>sh script.sh</code>
 
 <p>
-Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" instance into it 
-using the VCN private subnet. Then it will create a compute VM instance for WebLogic from <b>Marketplace UCM image</b> using the VCN public subnet. Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <b>instance-agent</b>.
+Using Terraform the script will create a "weblogic-VCN" and a compute VM instance "webLogic" from <b>Marketplace UCM image</b> adding it to the VCN public subnet. Terraform will also create autonomous database Weblogic-ATP" with Internet access and adds a custom schema to it. Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <b>instance-agent</b>.
     
 <i>Note:</i> To make the <code>VM instance-agent</code> run succesfully add the following <code>policy</code> to
 the <code>dynamic group</code> you are running within:
