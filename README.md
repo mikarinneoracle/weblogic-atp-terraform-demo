@@ -3,11 +3,18 @@
 <i><b>prereq: oci cli must be working in oci cloud shell</b></i>
 
 ### Demo - deploying WebLogic from OCI Marketplace UCM image with ATP using oci cli and Terraform in OCI cloud shell including maven build from source. ATP will run in private subnet and WLS in a public one.
+
+### Instructions
+
 <p>
 Open oci cloud shell
 
 <p>
-Run <code>git clone https://github.com/mikarinneoracle/weblogic-atp-terraform-demo.git</code>
+Run 
+<pre>
+git clone https://github.com/mikarinneoracle/weblogic-atp-terraform-demo.git
+git checkout weblogic-with-ATP-in-private-subnet
+</pre>
 
 <p>
 Edit <code>script.sh</code> with oci code editor<br>
