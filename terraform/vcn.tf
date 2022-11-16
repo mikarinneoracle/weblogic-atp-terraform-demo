@@ -35,13 +35,6 @@ resource "oci_core_default_route_table" "weblogic_public_rt" {
     destination_type  = "CIDR_BLOCK"
     network_entity_id = oci_core_internet_gateway.weblogic_IG.id
   }
-  
-  route_rules {
-    network_entity_id = oci_core_service_gateway.weblogic_service_gateway.id
-    description       = "OCI Services via Service Gateway"
-    destination       = "all-ams-services-in-oracle-services-network"
-    destination_type  = "SERVICE_CIDR_BLOCK"
-  }
 }
 
 resource "oci_core_security_list" "weblogic_security_list_public" {
@@ -105,16 +98,4 @@ resource "oci_core_subnet" "Public_Subnet_weblogic" {
   prohibit_internet_ingress  = "false"
   prohibit_public_ip_on_vnic = "false"
   route_table_id             = oci_core_default_route_table.weblogic_public_rt.id
-}
-
-resource "oci_core_service_gateway" "weblogic_service_gateway" {
-  compartment_id = var.compartment_id
-  services {
-    service_id = data.oci_core_services.weblogic_services.services.0.id
-  }
-  vcn_id       = oci_core_vcn.weblogic_vcn.id
-  display_name = "weblogic-svcgw"
-  freeform_tags = {
-    Managed = var.tags
-  }
 }

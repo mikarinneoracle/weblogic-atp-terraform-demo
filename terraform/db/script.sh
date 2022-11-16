@@ -1,4 +1,5 @@
 #!/bin/bash
+cd db
 echo $1 > wallet64
 base64 --decode wallet64 > wallet.zip
 mkdir -p ./network/admin
