@@ -1,6 +1,4 @@
 resource "oci_database_autonomous_database" "weblogic_atp" {
-  subnet_id                = oci_core_subnet.Private_Subnet_weblogic.id
-  private_endpoint_label   = "weblogic"
   admin_password           = var.weblogic_atp_admin_password
   is_free_tier             = var.use_always_free
   compartment_id           = var.compartment_id
