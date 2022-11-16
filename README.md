@@ -2,7 +2,7 @@
 
 <i><b>prereq: oci cli must be working in oci cloud shell</b></i>
 
-### Demo - deploying WebLogic from OCI Marketplace UCM image with ATP using oci cli and Terraform in OCI cloud shell including maven build from source
+### Demo - deploying WebLogic from OCI Marketplace UCM image with ATP using oci cli and Terraform in OCI cloud shell including maven build from source. ATP will run in private subnet and WLS in a public one.
 <p>
 Open oci cloud shell
 
