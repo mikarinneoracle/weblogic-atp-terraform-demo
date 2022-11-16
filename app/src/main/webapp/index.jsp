@@ -6,7 +6,7 @@
 <% TierOptions optionsFree = Atp.getTierOptions("FREE"); %>
 <% TierOptions optionsPro = Atp.getTierOptions("PRO"); %>
 <% TierOptions optionsEnterprise = Atp.getTierOptions("ENTERPRISE"); %>
-
+    
 <!doctype html>
 <html lang="en">
   <head>
@@ -67,7 +67,7 @@
   <main>
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
-        <%= Atp.error %>
+        <%= Atp.error %><p><%= optionsFree.isPublic %>
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
             <h4 class="my-0 fw-normal">Free</h4>
@@ -135,7 +135,7 @@
         <tbody>
           <tr>
             <th scope="row" class="text-start">Public</th>
-            <td><% if (optionsFree.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
+            <td><% if (optionsFree.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } else { %> XXXXXX <% } %></td>
             <td><% if (optionsPro.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
             <td><% if (optionsEnterprise.isPublic == "Y") { %><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg><% } %></td>
           </tr>
