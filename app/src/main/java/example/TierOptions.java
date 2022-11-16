@@ -19,12 +19,12 @@ public class TierOptions
         this.isExtrasec = "";
     }
 
-    public void setTierOptions(String isPublic, String isPrivate, String isPermissions, String isPermissions, String isUnlimited, String isExtrasec)
+    public void setTierOptions(String isPublic, String isPrivate, String isPermissions, String isSharing, String isUnlimited, String isExtrasec)
     {
         this.isPublic = isPublic;
         this.isPrivate = isPrivate;
         this.isPermissions = isPermissions;
-        this.isSharing = isPermissions;
+        this.isSharing = isSharing;
         this.isUnlimited = isUnlimited;
         this.isExtrasec = isExtrasec;
     }
