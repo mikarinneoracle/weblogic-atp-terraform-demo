@@ -7,6 +7,8 @@
 <p>
 Deploying ATP to a <i>private</i> subnet instead of public in this <a href="https://github.com/mikarinneoracle/weblogic-atp-terraform-demo/tree/weblogic-with-ATP-in-private-subnet">branch</a>. (Excludes the Terraform Liquibase part.)
 
+### Instructions
+
 <p>
 Open oci cloud shell
 
