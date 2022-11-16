@@ -4,8 +4,6 @@
 
 ### Demo - deploying WebLogic from OCI Marketplace UCM image with ATP using oci cli and Terraform in OCI cloud shell including maven build from source. ATP will run in private subnet and WLS in a public one.
 
-### Instructions
-
 <p>
 Open oci cloud shell
 
