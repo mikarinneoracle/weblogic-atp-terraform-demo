@@ -65,4 +65,4 @@ After making sure WebLogic sample app works delete all created resources with Te
 
 ### See on Youtube
 
-<a href="https://www.youtube.com/watch?v=4oQPy4K83Fk">https://www.youtube.com/watch?v=4oQPy4K83Fk</a>
+<a href="https://www.youtube.com/watch?v=vHj5cyT9K2E">https://www.youtube.com/watch?v=vHj5cyT9K2E</a>
