@@ -46,6 +46,11 @@ Allow dynamic-group MyDynamicGroup to use instance-agent-command-execution-famil
 Access <b><code>http://&lt;ip address of the VM&gt;:7001/app</code></b> from your browser.
 
 <p>
+Access "price admin" from the <i>Admin</i> -link on the page.
+Admin <b>username</b> is <code>priceadmin</code> and <b>password</b> is <code>WelcomeFolks123#!</code>
+Edit prices and options and then save and reload the price page.
+
+<p>
 WLS console can be accessed using url:
 
 <p>
