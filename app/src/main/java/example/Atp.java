@@ -60,4 +60,50 @@ public class Atp
         }
         return tierOptions;
     }
+    
+    public static void saveTierPrice(String tier, TierPrice tierPrice)
+    {
+        try {
+            if(AtpUtil.getDataSource() != null)
+            {
+                Connection connection = AtpUtil.getDataSource().getConnection();
+                Statement statement = connection.createStatement();
+                statement.executeUpdate("update PRICE set " +
+                    "PRICE_MO='" + tierPrice.price_mo + "'," +
+                    "USERS='" + tierPrice.users + "'," +
+                    "STORAGE='" + tierPrice.storage + "'," +
+                    "SUPPORT='" + tierPrice.support + "' " + 
+                    "where TIER = '" + tier + "'");
+                connection.close();
+            } else {
+                error = "No datasource available";
+            }
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+    }
+    
+    public static void saveTierOptions(String tier, TierOptions tierOptions)
+    {
+        try {
+            if(AtpUtil.getDataSource() != null)
+            {
+                Connection connection = AtpUtil.getDataSource().getConnection();
+                Statement statement = connection.createStatement();
+                statement.executeUpdate("update OPTIONS set " +
+                    "ISPUBLIC='" + tierOptions.isPublic + "'," +
+                    "ISPRIVATE='" + tierOptions.isPrivate + "'," +
+                    "ISPERMISSIONS='" + tierOptions.isPermissions + "'," +
+                    "ISSHARING='" + tierOptions.isSharing + "', " + 
+                    "ISUNLIMITED='" + tierOptions.isUnlimited + "', " + 
+                    "ISEXTRASEC='" + tierOptions.isExtrasec + "' " +
+                    "where TIER = '" + tier + "'");
+                connection.close();
+            } else {
+                error = "No datasource available";
+            }
+        } catch (Exception e) {
+            error = e.getMessage();
+        }
+    }
 }
