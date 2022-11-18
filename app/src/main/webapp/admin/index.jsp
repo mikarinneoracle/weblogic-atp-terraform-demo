@@ -63,7 +63,7 @@ TierOptions optionsEnterprise = Atp.getTierOptions("ENTERPRISE");
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mika Rinne, and Bootstrap contributors">
-    <title>Pricing admin · Bootstrap v5.0</title>
+    <title>Pricing admin - Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
 
