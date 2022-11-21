@@ -62,3 +62,4 @@ do
     tries=1001
   fi
 done
+echo "WebLogic app deployment done."
