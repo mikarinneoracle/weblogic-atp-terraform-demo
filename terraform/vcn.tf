@@ -165,7 +165,6 @@ resource "oci_core_nat_gateway" "weblogic_nat_gw" {
 
 resource "oci_core_subnet" "Public_Subnet_weblogic" {
   vcn_id              = oci_core_vcn.weblogic_vcn.id
-  availability_domain = var.availability_domain
   cidr_block          = "10.0.0.0/24"
   compartment_id      = var.compartment_id
   display_name        = "Public Subnet-wls"
@@ -183,7 +182,6 @@ resource "oci_core_subnet" "Public_Subnet_weblogic" {
 resource "oci_core_subnet" "Private_Subnet_weblogic" {
   vcn_id              = oci_core_vcn.weblogic_vcn.id
   dns_label           = "weblogic"
-  availability_domain = var.availability_domain
   cidr_block          = "10.0.1.0/24"
   compartment_id      = var.compartment_id
   display_name        = "Private Subnet-wls"
