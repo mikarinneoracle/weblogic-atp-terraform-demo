@@ -4,25 +4,21 @@ export ad="Vihs:eu-amsterdam-1-AD-1"
 sed -i "s|COMPARTMENT_ID|${compartmentId}|g" terraform/vars.tf
 sed -i "s|REGION|${region}|g" terraform/vars.tf
 sed -i "s|AD|${ad}|g" terraform/vars.tf
-#export OCID="ocid1.instance.oc1.eu-amsterdam-1.anqw2ljruevftmqct6gofznymqk7sj6chg5xefspfamgofx3il3wp5bwuv7a"
-if [ -z "$OCID" ]; then
-    echo "Creating Terraform .."
-    cd terraform
-    terraform init > tf.out
-    terraform apply -auto-approve -no-color > ../tf.out &
-    cd ..
-    export tries=0
-    export OCID=""
-    while [ $tries -le 100 ] && [[ $OCID == "" ]] 
-    do
-        tail -n 1 tf.out > out.txt
-        cat out.txt
-        export OCID=$(grep -oP '(?<=ocid = ")[^"]*' out.txt)
-        tries=$(( $tries + 1 ))
-        sleep 30
-    done
-fi
-clear
+echo "Creating Terraform .."
+cd terraform
+terraform init > tf.out
+terraform apply -auto-approve -no-color > ../tf.out &
+cd ..
+export tries=0
+export OCID=""
+while [ $tries -le 100 ] && [[ $OCID == "" ]] 
+do
+    tail -n 1 tf.out > out.txt
+    cat out.txt
+    export OCID=$(grep -oP '(?<=ocid = ")[^"]*' out.txt)
+    tries=$(( $tries + 1 ))
+    sleep 30
+done
 echo "Terraform done. Doing maven build .."
 cd app
 mvn package -q
