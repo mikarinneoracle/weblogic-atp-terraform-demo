@@ -39,4 +39,8 @@ resource "oci_core_instance" "weblogic_vm" {
     py2_par             = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.py_script2_preauth.access_uri}"
     atp_properties_par = "https://objectstorage.${var.region}.oraclecloud.com${oci_objectstorage_preauthrequest.atp_properties_preauth.access_uri}"
   }
+  
+  lifecycle {
+    ignore_changes = all
+  }
 }

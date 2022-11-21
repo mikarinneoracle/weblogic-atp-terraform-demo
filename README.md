@@ -30,7 +30,10 @@ export region="eu-amsterdam-1"
 <i>Note</i>: Just make sure you are running the Cloud Shell in the <i>same region</i> as this one.
 
 <p>
-Run <code>sh script.sh</code>
+Run 
+<pre>
+    sh script.sh
+</pre>
 
 <p>
 Using Terraform the script will create a "weblogic-VCN" and a compute VM instance "webLogic" from <b>Marketplace UCM image</b> adding it to the VCN public subnet. Terraform will also create autonomous database Weblogic-ATP" with Internet access and adds a custom schema to it. Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <b>instance-agent</b>.
@@ -56,10 +59,9 @@ WLS console can be accessed using url:
 <b><code>http://&lt;ip address of the VM&gt;:7001/console</code></b> with user <code>weblogic</code> and password <code>Welcome1</code>.
 
 <p>
-After making sure WebLogic sample app works delete all created resources with Terraform by:
+After making sure WebLogic sample app works delete all created resources with Terraform by running:
 <pre>
-    cd terraform
-    terraform destroy
+    sh terraform-destroy.sh
 </pre>
 
 ### See on Youtube
