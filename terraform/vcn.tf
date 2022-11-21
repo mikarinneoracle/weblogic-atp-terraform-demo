@@ -85,6 +85,7 @@ resource "oci_core_security_list" "weblogic_security_list_public" {
 
 resource "oci_core_subnet" "Public_Subnet_weblogic" {
   vcn_id              = oci_core_vcn.weblogic_vcn.id
+  availability_domain = var.availability_domain
   cidr_block          = "10.0.0.0/24"
   compartment_id      = var.compartment_id
   display_name        = "Public Subnet-wls"
