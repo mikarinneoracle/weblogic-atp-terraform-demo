@@ -3,7 +3,7 @@ data "template_file" "wls" {
 }
 
 resource "oci_core_instance" "weblogic_vm" {
-  availability_domain = null
+  availability_domain = lookup(data.oci_identity_availability_domains.this.availability_domains[0], "name")
   compartment_id      = var.compartment_id
   display_name        = "weblogic"
   shape               = var.weblogic_shape
