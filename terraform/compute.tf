@@ -3,7 +3,6 @@ data "template_file" "wls" {
 }
 
 resource "oci_core_instance" "weblogic_vm" {
-  availability_domain = var.availability_domain
   compartment_id      = var.compartment_id
   display_name        = "weblogic"
   shape               = var.weblogic_shape
