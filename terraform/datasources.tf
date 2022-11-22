@@ -1,3 +1,7 @@
+data "oci_identity_availability_domains" "this" {
+  compartment_id = var.compartment_id
+}
+
 data "oci_objectstorage_namespace" "user_namespace" {
   compartment_id = var.compartment_id
 }
@@ -8,4 +12,3 @@ resource "oci_database_autonomous_database_wallet" "weblogic_atp_wallet" {
   base64_encode_content  = true
   generate_type          = "SINGLE"
 }
-

@@ -59,7 +59,7 @@ do
   i=$(( (i+1) %4 ))
   printf "\r${spin:$i:1}"
   tries=$(( $tries + 1 ))
-  if [ $status == 'FAILED' ]; then
+  if [ "$status" == "FAILED" ]; then
     echo "Instance-agent deployment failed  .. "
     tries=1001
   fi
@@ -70,3 +70,7 @@ oci os object bulk-delete -bn wls-artifacts --force
 oci os object bulk-delete -bn wls-create-domain --force
 rm -f out.txt
 rm -f tf.out
+echo "WebLogic app deployment done."
+echo "URL:"
+echo "http://$ip:7001/app"
+
