@@ -63,4 +63,5 @@ do
   fi
 done
 echo "WebLogic app deployment done."
+echo "URL:"
 echo "http://$ip:7001/app"
