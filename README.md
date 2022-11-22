@@ -66,4 +66,10 @@ After making sure WebLogic sample app works delete all created resources with Te
 
 ### See on Youtube
 
+Build from source and deploy:
+
 <a href="https://www.youtube.com/watch?v=vHj5cyT9K2E">https://www.youtube.com/watch?v=vHj5cyT9K2E</a>
+
+Update JSP, rebuild and re-dedeploy:
+
+<a href="https://www.youtube.com/watch?v=EQl3Hia-Cng">https://www.youtube.com/watch?v=EQl3Hia-Cng</a>
