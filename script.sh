@@ -70,3 +70,7 @@ oci os object bulk-delete -bn wls-artifacts --force
 oci os object bulk-delete -bn wls-create-domain --force
 rm -f out.txt
 rm -f tf.out
+echo "WebLogic app deployment done."
+echo "URL:"
+echo "http://$ip:7001/app"
+
