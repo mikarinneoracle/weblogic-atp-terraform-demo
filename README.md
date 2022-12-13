@@ -70,6 +70,6 @@ Build from source and deploy:
 
 <a href="https://www.youtube.com/watch?v=vHj5cyT9K2E">https://www.youtube.com/watch?v=vHj5cyT9K2E</a>
 
-Update JSP, rebuild and re-dedeploy:
+Update JSP, rebuild and re-deploy:
 
 <a href="https://www.youtube.com/watch?v=EQl3Hia-Cng">https://www.youtube.com/watch?v=EQl3Hia-Cng</a>
