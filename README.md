@@ -19,12 +19,13 @@ git checkout weblogic-with-ATP-in-private-subnet
 
 <p>
 Edit <code>script.sh</code> with oci code editor<br>
-    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i> if necessary (lines 1-2):
+    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i> and <i>AD</i> if necessary (lines 1-3):
 
 <p>
 <pre>
 export compt_ocid='&lt;YOUR COMPARTMENT OCID&gt;'
 export region="eu-amsterdam-1"
+export ad="Vihs:eu-amsterdam-1-AD-1"
 </pre>
 
 <p>
@@ -34,7 +35,7 @@ export region="eu-amsterdam-1"
 Run <code>sh script.sh</code>
 
 <p>
-Using Terraforem the script will create a "weblogic-VCN" and then attach "weblogic-ATP" instance into it 
+Using Terraform the script will create a "weblogic-VCN" and then attach "weblogic-ATP" instance into it 
 using the VCN private subnet. Then it will create a compute VM instance for WebLogic from <b>Marketplace UCM image</b> using the VCN public subnet. Finally it will do a maven build from source <code>app</code> then and install the built WebLogic sample <code>app.war</code> on the VM using <b>instance-agent</b>.
     
 <i>Note:</i> To make the <code>VM instance-agent</code> run succesfully add the following <code>policy</code> to
