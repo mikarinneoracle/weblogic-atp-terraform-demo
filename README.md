@@ -19,7 +19,7 @@ git checkout weblogic-with-ATP-in-private-subnet
 
 <p>
 Edit <code>script.sh</code> with oci code editor<br>
-    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i>, <i>region_key</i> and <i>AD</i> if necessary (lines 1-3):
+    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i>, <i>region_key</i> and <i>AD</i> if necessary (lines 1-4):
 
 <p>
 <pre>
