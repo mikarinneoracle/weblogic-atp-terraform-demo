@@ -7,7 +7,7 @@ variable "region" {
 variable "availability_domain" {
   type    = string
   default = "AD" 
-  #default = "Vihs:eu-amsterdam-1-AD-1" 
+  #default = "eu-amsterdam-1-AD-1" 
 }
 
 variable "compartment_id" {

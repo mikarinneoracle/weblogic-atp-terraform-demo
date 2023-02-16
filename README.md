@@ -25,7 +25,7 @@ Edit <code>script.sh</code> with oci code editor<br>
 <pre>
 export compt_ocid='&lt;YOUR COMPARTMENT OCID&gt;'
 export region="eu-amsterdam-1"
-export ad="Vihs:eu-amsterdam-1-AD-1"
+export ad="eu-amsterdam-1-AD-1"
 </pre>
 
 <p>
