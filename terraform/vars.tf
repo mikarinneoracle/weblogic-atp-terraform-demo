@@ -10,8 +10,6 @@ variable "availability_domain" {
   #default = "eu-amsterdam-1-AD-1" 
 }
 
-"all-ams-services-in-oracle-services-network"
-
 variable "compartment_id" {
   type    = string
   default = "COMPARTMENT_ID"
