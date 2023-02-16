@@ -1,9 +1,11 @@
 export compartmentId="<YOUR COMPARTMENT ID>"
 export region="eu-amsterdam-1"
+export region_key="ams"
 export ad="eu-amsterdam-1-AD-1"
 sed -i "s|COMPARTMENT_ID|${compartmentId}|g" terraform/vars.tf
 sed -i "s|REGION|${region}|g" terraform/vars.tf
 sed -i "s|AD|${ad}|g" terraform/vars.tf
+sed -i "s|REGION_KEY|${region_key}|g" terraform/vcn.tf
 echo "Creating Terraform .."
 cd terraform
 terraform init > tf.out

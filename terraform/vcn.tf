@@ -39,7 +39,7 @@ resource "oci_core_route_table" "weblogic_private_rt" {
   route_rules {
     network_entity_id = oci_core_service_gateway.weblogic_service_gateway.id
     description       = "OCI Services via Service Gateway"
-    destination       = "all-ams-services-in-oracle-services-network"
+    destination       = "all-REGION_KEY-services-in-oracle-services-network"
     destination_type  = "SERVICE_CIDR_BLOCK"
   }
 }
