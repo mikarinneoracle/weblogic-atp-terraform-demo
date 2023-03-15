@@ -25,7 +25,7 @@ variable "tags" {
 
 variable "weblogic_image_source_ocid" {
   type    = string
-  default = "ocid1.image.oc1..aaaaaaaapr7z57twuh4ornb25ehx7dm4w7vedc6wthewrokbdcyhtfs7bndq"
+  default = "ocid1.image.oc1..aaaaaaaagrmncsysh64fj5hh5pcjr6swo6oyzzbh4woi4q4hsyct6n5eqkuq"
 }
 
 variable "weblogic_shape" {
