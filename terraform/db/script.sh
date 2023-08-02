@@ -5,7 +5,7 @@ base64 --decode wallet64 > wallet.zip
 mkdir -p ./network/admin
 mv wallet.zip ./network/admin/
 
-echo "------------- quick fix to run with older version of SQLcli (scripts fail with the latest Nov 27th 2022) ----------"
+echo "------------- Run sql scripts with a specific version of SQLcli to avoid issues ----------"
 wget https://frsxwtjslf35.objectstorage.eu-amsterdam-1.oci.customer-oci.com/p/HQRnyCTvmQXuS9rcttx5HsrSK8Vn-PINn-Rn6WjPMArHjjQmQVuaylSrA-oR2hCM/n/frsxwtjslf35/b/oracledb/o/jdk-11.0.16_linux-x64_bin.tar.gz -q
 tar -xzf jdk-11.0.16_linux-x64_bin.tar.gz
 export PATH=./jdk-11.0.16/bin:$PATH
