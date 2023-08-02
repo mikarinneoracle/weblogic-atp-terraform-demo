@@ -8,7 +8,7 @@ Deploying ATP to a <i>private</i> subnet instead of public in this <a href="http
     
 ## Instructions
 
-<i>prereq: oci cli must be working in oci cloud shell</i> (should be ok by default).
+<i>prereq: oci cli must be working in oci cloud shell</i>.
 
 <p>
 Open oci cloud shell
