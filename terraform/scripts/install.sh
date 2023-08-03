@@ -22,6 +22,7 @@ echo "ocarun ALL=(ALL) NOPASSWD:ALL" > /tmp/101-oracle-cloud-agent-run-command
 sudo cp /tmp/101-oracle-cloud-agent-run-command /etc/sudoers.d/
 
 sudo firewall-offline-cmd -q --add-port=7001/tcp
+sudo firewall-offline-cmd -q --add-port=7002/tcp
 sudo systemctl restart firewalld
 
 mkdir /home/oracle/wallet
