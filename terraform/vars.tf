@@ -42,3 +42,9 @@ variable "weblogic_shape_ocpus" {
   type    = string
   default = "2"
 }
+
+# placeholder for ssh key to login to the VM
+variable "ssh_public_key" {
+  type    = string
+  default = ""
+}
