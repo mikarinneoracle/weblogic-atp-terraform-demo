@@ -111,6 +111,12 @@ TierOptions optionsEnterprise = Atp.getTierOptions("ENTERPRISE");
     <div class="container py-3">
     
       <main>
+        <form class="form-horizontal" role="form" method="POST">
+            <div class="col-md-8">
+              <input name="logout" value="Logout" type="submit" class="btn btn-primary">
+            </div>
+        </form>
+        <br>
         <form class="form-horizontal" role="form" method="POST">    
           <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
               
