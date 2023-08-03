@@ -6,6 +6,12 @@ if(session.getAttribute("username") == null) {
     response.sendRedirect("login.jsp"); 
 }
 
+if (request.getParameter("logout") != null) {
+   session.removeAttribute("username");
+   session.invalidate();
+   response.sendRedirect("login.jsp"); 
+}
+   
 if (request.getParameter("saveFree") != null) {
     // save free
    TierPrice tierPrice = new TierPrice(Float.parseFloat(request.getParameter("free_price_monthly")),
