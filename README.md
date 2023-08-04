@@ -30,12 +30,7 @@ export region="eu-amsterdam-1"
 <i>Note</i>: Just make sure you are running the Cloud Shell in the <i>same region</i> as this one.
 
 <p>
-Additionally (this is optional), to access the WebLogic VM created in this example add your <i>public ssh key</i> to the Terraform config variable <b>ssh_public_key</b> on <a href="terraform/vars.tf#L49">line 49</a> and then access the vm after the Terraform job has completed using the public ip address of the vm from your local environment e.g.
-
-<br>
-<code>
-ssh opc@&lt;public ip address of the vm&gt;
-</code>
+Additionally (this is optional), to access the WebLogic VM created in this example add your <i>public ssh key</i> to the Terraform config variable <b>ssh_public_key</b> on <a href="terraform/vars.tf#L49">line 49</a> and then access the vm after the Terraform job has completed using the public ip address of the vm from your local environment e.g. <code>ssh opc@&lt;public ip address of the vm&gt;</code>
 
 <p>
 Run 
