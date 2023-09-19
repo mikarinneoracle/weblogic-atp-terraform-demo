@@ -18,7 +18,7 @@ Run <code>git clone https://github.com/mikarinneoracle/weblogic-atp-terraform-de
 
 <p>
 Edit <code>script.sh</code> with oci code editor<br>
-    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i> if necessary (lines 1-2):
+    => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i> if necessary (<a href="script.sh#L1-L2">lines 1-2</a>):
 <p>
 <pre>
 compt_ocid='&lt;YOUR COMPARTMENT OCID&gt;'
@@ -26,7 +26,7 @@ region="eu-amsterdam-1"
 </pre>
 
 <p>
-    Optionally can add your <code>public ssh key</code> by replacing <i>&lt;YOUR OPTIONAL SSH KEY&gt;</i> in the <code>script.sh</code> (line 3):
+    Optionally can add your <code>public ssh key</code> by replacing <i>&lt;YOUR OPTIONAL SSH KEY&gt;</i> in the <code>script.sh</code> (<a href="script.sh#L3">line 3</a>):
 <p>
 <pre>
 sshKey="&lt;YOUR OPTIONAL SSH KEY&gt;"
