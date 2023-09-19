@@ -19,18 +19,21 @@ Run <code>git clone https://github.com/mikarinneoracle/weblogic-atp-terraform-de
 <p>
 Edit <code>script.sh</code> with oci code editor<br>
     => add your oci compartment by replacing <i>&lt;YOUR COMPARTMENT OCID&gt;</i> and the <i>region</i> if necessary (lines 1-2):
-
 <p>
 <pre>
-export compt_ocid='&lt;YOUR COMPARTMENT OCID&gt;'
-export region="eu-amsterdam-1"
+compt_ocid='&lt;YOUR COMPARTMENT OCID&gt;'
+region="eu-amsterdam-1"
 </pre>
 
 <p>
-<i>Note</i>: Just make sure you are running the Cloud Shell in the <i>same region</i> as this one.
+    Optionally can add your <code>public ssh key</code> by replacing <i>&lt;YOUR OPTIONAL SSH KEY&gt;</i> in the <code>script.sh</code> (line 3):
+<p>
+<pre>
+sshKey="<YOUR OPTIONAL SSH KEY>"
+</pre>    
 
 <p>
-Additionally (this is optional), to access the WebLogic VM created in this example add your <i>public ssh key</i> to the Terraform config variable <b>ssh_public_key</b> on <a href="terraform/vars.tf#L49">line 49</a> and then access the vm after the Terraform job has completed using the public ip address of the vm from your local environment e.g. <code>ssh opc@&lt;public ip address of the vm&gt;</code> on Mac or using PuTTY on Windows
+<i>Note</i>: Just make sure you are running the Cloud Shell in the <i>same region</i> as this one.
 
 <p>
 Run 

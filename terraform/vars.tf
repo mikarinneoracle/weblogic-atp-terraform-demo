@@ -25,7 +25,7 @@ variable "tags" {
 
 variable "weblogic_image_source_ocid" {
   type    = string
-  default = "ocid1.image.oc1..aaaaaaaagrmncsysh64fj5hh5pcjr6swo6oyzzbh4woi4q4hsyct6n5eqkuq"
+  default = "ocid1.image.oc1..aaaaaaaasog76b3c6bpzvhliybfv54tqdf7vg3hxhflabww2jly6fmksi6pa"
 }
 
 variable "weblogic_shape" {
@@ -43,8 +43,7 @@ variable "weblogic_shape_ocpus" {
   default = "2"
 }
 
-# placeholder for ssh key to login to the VM
 variable "ssh_public_key" {
   type    = string
-  default = ""
+  default = "SSH_KEY"
 }
