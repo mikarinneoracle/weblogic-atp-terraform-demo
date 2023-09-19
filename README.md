@@ -29,7 +29,7 @@ region="eu-amsterdam-1"
     Optionally can add your <code>public ssh key</code> by replacing <i>&lt;YOUR OPTIONAL SSH KEY&gt;</i> in the <code>script.sh</code> (line 3):
 <p>
 <pre>
-sshKey="<YOUR OPTIONAL SSH KEY>"
+sshKey="&lt;YOUR OPTIONAL SSH KEY&gt;"
 </pre>    
 
 <p>
