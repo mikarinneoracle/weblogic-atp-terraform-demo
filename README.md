@@ -80,7 +80,7 @@ Update JSP, rebuild and re-deploy:
 
 <a href="https://www.youtube.com/watch?v=EQl3Hia-Cng">https://www.youtube.com/watch?v=EQl3Hia-Cng</a>
 
-Example how to run WKTUI on OCI remotely using VNC to move this WLS domain/app to Kubernetes (OKE) using WKTUI.
+Example how to run WKTUI on OCI remotely using VNC to move this WLS domain/app to Kubernetes (OKE) using WKTUI:
 
 <a href="https://www.youtube.com/watch?v=pRCXJ6DMtkY">https://www.youtube.com/watch?v=pRCXJ6DMtkY</a>
 
