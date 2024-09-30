@@ -12,51 +12,6 @@
     <packaging>war</packaging>
     <name>app</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-sonar-plugin.version>3.9.1.2184</maven-sonar-plugin.version>
-    </properties>
-
-    <scm>
-        <connection>scm:git:git.poliisi.eficode.io:hello-world/hello-world.git</connection>
-        <developerConnection>scm:git:git.poliisi.eficode.io:hello-world/hello-world.git</developerConnection>
-        <url>https://git.poliisi.eficode.io/hello-world/hello-world</url>
-    </scm>
-
-    <ciManagement>
-        <system>Gitlab</system>
-        <url>https://git.poliisi.eficode.io/hello-world/hello-world/-/pipelines</url>
-    </ciManagement>
-
-    <distributionManagement>
-        <repository>
-            <id>hello-world-maven</id>
-            <name>Hello World Maven release repository</name>
-            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven-releases-local</url>
-        </repository>
-        <snapshotRepository>
-            <id>hello-world-maven</id>
-            <name>Hello World Maven snapshot repository</name>
-            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven-snapshots-local</url>
-        </snapshotRepository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>hello-world-maven</id>
-            <name>All Hello World Maven repositories</name>
-            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven</url>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>hello-world-maven</id>
-            <name>All Hello World Maven repositories</name>
-            <url>https://artifactory.poliisi.eficode.io/artifactory/hello-world-maven</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
         <dependency>
